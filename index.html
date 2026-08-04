@@ -2,20 +2,83 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LGPSM — Future Forward Fashion</title>
-    <meta name="description" content="LGPSM — Future Forward Fashion. Pure white minimal futuristic fashion website interface." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Michroma&family=Orbitron:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <script type="module" crossorigin src="./assets/index-DD9es0hZ.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DrwfI-3P.css">
+    <title>Muban — Web Projects</title>
+    <meta name="description" content="Collection of web projects" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+        color: #fff;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      .container {
+        text-align: center;
+        padding: 2rem;
+      }
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      p {
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 3rem;
+        font-size: 0.875rem;
+        letter-spacing: 0.05em;
+      }
+      .links {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .card {
+        display: block;
+        width: 280px;
+        padding: 2rem 1.5rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+      }
+      .card:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-4px);
+      }
+      .card h2 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .card p {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 0;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div class="container">
+      <h1>Muban</h1>
+      <p>Web Projects</p>
+      <div class="links">
+        <a href="./lgpsm-fashion/" class="card">
+          <h2>LGPSM</h2>
+          <p>Future Forward Fashion</p>
+        </a>
+        <a href="./asme-landing/" class="card">
+          <h2>Asme</h2>
+          <p>Liquid-Glass Landing</p>
+        </a>
+      </div>
+    </div>
   </body>
 </html>
