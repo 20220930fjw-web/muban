@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML 分享包预览</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+  }
+  h1 { font-size: 2.2rem; margin-bottom: 12px; }
+  p.subtitle { color: #94a3b8; margin-bottom: 40px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+  }
+  .card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 24px;
+    text-decoration: none;
+    color: #e2e8f0;
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .card:hover {
+    border-color: #3b82f6;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(59,130,246,0.15);
+  }
+  .card h2 { font-size: 1.15rem; }
+  .card .tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #1e3a5f;
+    color: #93c5fd;
+    width: fit-content;
+  }
+  .card .desc { font-size: 0.85rem; color: #94a3b8; }
+</style>
+</head>
+<body>
+  <h1>HTML 分享包预览</h1>
+  <p class="subtitle">本次合并新增的网站模板，点击卡片查看对应页面</p>
+  <div class="grid">
+    <a class="card" href="asme-landing/index.html">
+      <span class="tag">根目录</span>
+      <h2>asme-landing</h2>
+      <span class="desc">ASME 落地页模板</span>
+    </a>
+    <a class="card" href="lgpsm-fashion/index.html">
+      <span class="tag">根目录</span>
+      <h2>lgpsm-fashion</h2>
+      <span class="desc">LGPSM 时尚模板</span>
+    </a>
+    <a class="card" href="muban-asme/index.html">
+      <span class="tag">muban 子模块</span>
+      <h2>muban / asme-landing</h2>
+      <span class="desc">muban 目录下的 ASME 落地页模板</span>
+    </a>
+    <a class="card" href="muban-lgpsm/index.html">
+      <span class="tag">muban 子模块</span>
+      <h2>muban / lgpsm-fashion</h2>
+      <span class="desc">muban 目录下的 LGPSM 时尚模板</span>
+    </a>
+  </div>
+</body>
+</html>
