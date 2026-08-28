@@ -205,7 +205,7 @@ function ProjectCard({
       <div className="relative aspect-[16/10] border-b-2 border-black overflow-hidden bg-[#f5f0ea]">
         {hasImage ? (
           <img
-            src={`/assets/projects/${project.id}/cover.jpg`}
+            src={`./assets/projects/${project.id}/cover.jpg`}
             alt={project.title}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             loading="lazy"

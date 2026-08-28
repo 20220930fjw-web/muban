@@ -210,7 +210,7 @@ function FeaturedCard({
     >
       <div className="relative overflow-hidden rounded-2xl aspect-[3/4] border border-white/10 bg-gradient-to-br from-white/5 to-transparent">
         <img
-          src={project.id.startsWith('youman') || project.id.startsWith('profilm') || project.id.startsWith('yuanshuai') || project.id.startsWith('chando') || project.id.startsWith('ai-concept') || project.id.startsWith('pack1') || project.id.startsWith('logo') || project.id.startsWith('ip-series') || project.id.startsWith('3d-poster') || project.id.startsWith('wanshun') || project.id.startsWith('hanshan') || project.id.startsWith('amazon') ? `/assets/projects/${project.id}/cover.jpg` : ''}
+          src={project.id.startsWith('youman') || project.id.startsWith('profilm') || project.id.startsWith('yuanshuai') || project.id.startsWith('chando') || project.id.startsWith('ai-concept') || project.id.startsWith('pack1') || project.id.startsWith('logo') || project.id.startsWith('ip-series') || project.id.startsWith('3d-poster') || project.id.startsWith('wanshun') || project.id.startsWith('hanshan') || project.id.startsWith('amazon') ? `./assets/projects/${project.id}/cover.jpg` : ''}
           alt={project.title}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           loading="lazy"
@@ -309,7 +309,7 @@ function ProjectCard({
       <div className="aspect-[4/3] relative overflow-hidden bg-gradient-to-br from-white/5 to-transparent">
         {hasImage ? (
           <img
-            src={`/assets/projects/${project.id}/cover.jpg`}
+            src={`./assets/projects/${project.id}/cover.jpg`}
             alt={project.title}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             loading="lazy"

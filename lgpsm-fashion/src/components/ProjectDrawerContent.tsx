@@ -30,7 +30,7 @@ function ProjectDrawerContent({ project }: ProjectDrawerContentProps) {
     'ip-series3', '3d-poster1', 'youman-poster', 'wanshun', 'hanshan', 'amazon',
   ].includes(project.id);
 
-  const galleryImages = hasImage ? [`/assets/projects/${project.id}/cover.jpg`] : [];
+  const galleryImages = hasImage ? [`./assets/projects/${project.id}/cover.jpg`] : [];
   const num = String(project.id.length).padStart(3, '0');
 
   return (

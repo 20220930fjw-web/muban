@@ -43,7 +43,7 @@ function ProjectDetailDrawer({ project, isOpen, onClose }: ProjectDetailDrawerPr
   ].includes(project.id);
 
   const galleryImages = hasImage
-    ? [`/assets/projects/${project!.id}/cover.jpg`]
+    ? [`./assets/projects/${project!.id}/cover.jpg`]
     : [];
 
   return (
