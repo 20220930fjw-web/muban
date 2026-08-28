@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作品集模块 · 布局方案对比</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a10;color:#e8e8ef;font-family:'Plus Jakarta Sans',sans-serif;padding:60px 48px;line-height:1.6}
+.heading{margin-bottom:12px;text-align:center}
+.heading h1{font-family:'Instrument Serif',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:400;letter-spacing:-.02em}
+.heading h1 em{font-style:italic;background:linear-gradient(135deg,#e8b88a,#b8895a);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.heading p{color:#888;font-size:.95rem;margin-top:8px}
+.options{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:32px 0 48px}
+.opt-btn{padding:10px 20px;border-radius:999px;background:#181820;border:1px solid #2a2a35;color:#bbb;cursor:pointer;font-size:.85rem;transition:all .25s}
+.opt-btn:hover{border-color:#555;color:#fff}
+.opt-btn.active{background:linear-gradient(135deg,#e8b88a,#b8895a);color:#000;border-color:transparent;font-weight:600}
+.scheme-wrap{display:none}
+.scheme-wrap.visible{display:block}
+.scheme-title{display:flex;align-items:baseline;gap:16px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #25252f}
+.scheme-title h2{font-size:1.5rem;font-weight:700}
+.scheme-title .tag{font-size:.75rem;padding:4px 12px;border-radius:100px;background:rgba(212,165,116,.15);color:#d4a574;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.scheme-title .desc{color:#777;font-size:.85rem}
+.preview{border:1px solid #2a2a35;border-radius:20px;overflow:hidden;background:#121218;margin-bottom:56px;position:relative}
+.preview-header{display:flex;align-items:center;gap:8px;padding:14px 20px;background:#181820;border-bottom:1px solid #24242e}
+.dot{width:12px;height:12px;border-radius:50%}.dot.r{background:#ff5f57}.dot.y{background:#febc2e}.dot.g{background:#28c840}
+.preview-title{color:#666;font-size:.8rem;margin-left:16px;font-weight:500;letter-spacing:.03em}
+
+/* ============ Section-Level Hero Label ============ */
+.section-label{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px}
+
+/* ============ SCHEME A: Limoo移植版 (asme-landing 深色玻璃风) ============ */
+.scheme-a{padding:48px}
+.scheme-a .section-label{color:#d4a574}
+.scheme-a .hero{text-align:center;margin-bottom:40px}
+.scheme-a .hero h3{font-family:'Instrument Serif',serif;font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:10px}
+.scheme-a .hero h3 em{font-style:italic;background:linear-gradient(135deg,#e8b88a,#b8895a);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.scheme-a .hero p{color:#999;max-width:560px;margin:0 auto;font-size:.9rem}
+.scheme-a .main-cat{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:32px 0 24px}
+.scheme-a .cat-card{padding:20px 16px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(212,165,116,.15);text-align:center;cursor:pointer;transition:all .25s;backdrop-filter:blur(8px)}
+.scheme-a .cat-card:hover{transform:translateY(-3px);border-color:rgba(212,165,116,.35);box-shadow:0 10px 30px rgba(212,165,116,.08)}
+.scheme-a .cat-card.active{border-color:rgba(212,165,116,.6);background:rgba(212,165,116,.08)}
+.scheme-a .cat-card .ico{font-size:1.6rem;margin-bottom:8px}
+.scheme-a .cat-card .n{font-weight:700;font-size:.9rem;margin-bottom:4px}
+.scheme-a .cat-card .c{color:#777;font-size:.75rem}
+.scheme-a .sub-nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:32px;padding:14px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid #1f1f28}
+.scheme-a .chip{padding:6px 14px;border-radius:100px;font-size:.75rem;background:transparent;border:1px solid #2e2e38;color:#aaa;cursor:pointer;transition:all .2s}
+.scheme-a .chip:hover{border-color:#555;color:#fff}
+.scheme-a .chip.active{background:linear-gradient(135deg,#e8b88a,#b8895a);color:#000;border-color:transparent;font-weight:600}
+.scheme-a .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.scheme-a .card{border-radius:14px;overflow:hidden;background:rgba(255,255,255,.03);border:1px solid #1f1f28;transition:all .3s;cursor:pointer}
+.scheme-a .card:hover{transform:translateY(-5px);border-color:rgba(212,165,116,.4);box-shadow:0 16px 40px rgba(0,0,0,.4)}
+.scheme-a .cover{aspect-ratio:4/3;background:linear-gradient(135deg,#1e1e2a,#2a2535,#3a2f2e);position:relative;overflow:hidden}
+.scheme-a .cover::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(212,165,116,.15),transparent 60%)}
+.scheme-a .cover .ph{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:2.2rem;opacity:.35}
+.scheme-a .card-body{padding:16px}
+.scheme-a .c-cat{font-size:.65rem;font-weight:700;letter-spacing:.18em;color:#d4a574;text-transform:uppercase;margin-bottom:6px}
+.scheme-a .c-title{font-size:1rem;font-weight:700;margin-bottom:6px;line-height:1.35}
+.scheme-a .card:hover .c-title{color:#e8b88a}
+.scheme-a .c-desc{font-size:.8rem;color:#888;line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.scheme-a .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.scheme-a .tag{font-size:.65rem;padding:3px 8px;border-radius:999px;background:rgba(212,165,116,.08);color:#a8937b}
+@media(max-width:900px){.scheme-a .main-cat{grid-template-columns:repeat(2,1fr)}.scheme-a .grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.scheme-a{padding:24px}.scheme-a .grid{grid-template-columns:1fr}}
+
+/* ============ SCHEME B: lgpsm-fashion 米白未来风 ============ */
+.scheme-b{padding:48px;background:#fafaf9;color:#111}
+.scheme-b .section-label{color:#b8895a;font-family:'Orbitron',sans-serif;font-weight:800}
+.scheme-b .hero{margin-bottom:36px;position:relative;padding:20px 0}
+.scheme-b .bracket{position:absolute;width:28px;height:28px;border:2px solid #111}
+.scheme-b .bracket.tl{top:0;left:0;border-right:none;border-bottom:none}
+.scheme-b .bracket.br{bottom:0;right:0;border-left:none;border-top:none}
+.scheme-b .hero h3{font-family:'Orbitron',sans-serif;font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:900;letter-spacing:.06em;line-height:1.1}
+.scheme-b .hero h3 .acc{background:linear-gradient(135deg,#d4a574,#b8895a);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.scheme-b .hero p{color:#666;margin-top:10px;max-width:520px;font-size:.88rem}
+.scheme-b .cat-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}
+.scheme-b .cat-box{padding:18px;border:1px solid #000;position:relative;cursor:pointer;transition:all .25s}
+.scheme-b .cat-box:hover{background:#000;color:#fff;transform:translateY(-3px)}
+.scheme-b .cat-box:hover .c-count{color:rgba(255,255,255,.5)}
+.scheme-b .cat-box.active{background:#000;color:#fff}
+.scheme-b .cat-box .c-name{font-weight:700;font-size:.95rem;font-family:'Orbitron',sans-serif;letter-spacing:.03em;margin-bottom:4px}
+.scheme-b .cat-box .c-count{font-size:.7rem;color:#888;letter-spacing:.1em;text-transform:uppercase}
+.scheme-b .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.scheme-b .proj-card{border:1px solid #000;background:#fff;transition:all .3s;cursor:pointer;position:relative;overflow:hidden}
+.scheme-b .proj-card:hover{box-shadow:8px 8px 0 #000;transform:translate(-3px,-3px)}
+.scheme-b .p-cover{aspect-ratio:16/10;border-bottom:1px solid #000;background:linear-gradient(135deg,#f5f0ea,#ebe3d8,#d4c4aa);position:relative}
+.scheme-b .p-cover .ph{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:2rem;opacity:.3}
+.scheme-b .p-body{padding:18px}
+.scheme-b .p-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.scheme-b .p-cat{font-size:.65rem;font-weight:700;letter-spacing:.2em;color:#b8895a;text-transform:uppercase;font-family:'Orbitron',sans-serif}
+.scheme-b .p-num{font-size:.7rem;font-family:'Orbitron',sans-serif;font-weight:800;opacity:.3}
+.scheme-b .p-title{font-weight:700;font-size:1rem;line-height:1.35;margin-bottom:8px}
+.scheme-b .p-desc{font-size:.78rem;color:#666;line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.scheme-b .p-tags{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.scheme-b .p-tag{font-size:.65rem;padding:3px 8px;border:1px solid #000;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+@media(max-width:900px){.scheme-b .cat-list{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.scheme-b{padding:20px}.scheme-b .proj-grid{grid-template-columns:1fr}}
+
+/* ============ SCHEME C: Horizontal Scroll (asme 高级感) ============ */
+.scheme-c{padding:48px}
+.scheme-c .section-label{color:#d4a574;font-family:'Instrument Serif',serif;text-transform:capitalize;letter-spacing:.1em;font-size:.8rem}
+.scheme-c .hero{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:36px;border-bottom:1px solid #25252f;padding-bottom:24px}
+.scheme-c .hero h3{font-family:'Instrument Serif',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:400;line-height:1;max-width:520px}
+.scheme-c .hero h3 em{font-style:italic;color:#d4a574}
+.scheme-c .hero .side{color:#888;font-size:.82rem;max-width:320px;line-height:1.7}
+.scheme-c .cat-strip{display:flex;gap:0;margin-bottom:32px;border-bottom:1px solid #222}
+.scheme-c .cat-tab{padding:14px 20px;font-size:.82rem;color:#888;font-weight:500;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;margin-bottom:-1px;letter-spacing:.04em}
+.scheme-c .cat-tab:hover{color:#e8e8ef}
+.scheme-c .cat-tab.active{color:#d4a574;border-bottom-color:#d4a574;font-weight:600}
+.scheme-c .scroll-wrap{overflow-x:auto;overflow-y:hidden;margin:0 -48px;padding:0 48px 20px;scrollbar-width:thin;scrollbar-color:#444 transparent}
+.scheme-c .scroll-wrap::-webkit-scrollbar{height:4px}.scheme-c .scroll-wrap::-webkit-scrollbar-thumb{background:#444;border-radius:4px}
+.scheme-c .hori-grid{display:flex;gap:20px;width:max-content}
+.scheme-c .big-card{width:320px;flex-shrink:0;border-radius:18px;overflow:hidden;background:rgba(255,255,255,.03);border:1px solid #1f1f28;transition:all .35s;cursor:pointer}
+.scheme-c .big-card:hover{transform:translateY(-5px);border-color:rgba(212,165,116,.35)}
+.scheme-c .bc-cover{aspect-ratio:3/4;background:linear-gradient(160deg,#232330,#2e2735,#3a2e2a);position:relative;overflow:hidden}
+.scheme-c .bc-cover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 10%,rgba(212,165,116,.2),transparent 60%)}
+.scheme-c .bc-cover .ph{position:absolute;top:35%;left:50%;transform:translate(-50%,-50%);font-size:3rem;opacity:.3}
+.scheme-c .bc-cover .badge{position:absolute;top:14px;left:14px;padding:4px 10px;border-radius:999px;background:rgba(0,0,0,.5);backdrop-filter:blur(6px);color:#d4a574;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.scheme-c .bc-body{padding:18px}
+.scheme-c .bc-title{font-family:'Instrument Serif',serif;font-size:1.25rem;line-height:1.3;margin-bottom:8px;font-weight:400}
+.scheme-c .bc-desc{font-size:.8rem;color:#888;line-height:1.55;margin-bottom:12px}
+.scheme-c .bc-tags{display:flex;gap:6px;flex-wrap:wrap}
+.scheme-c .bc-tag{font-size:.65rem;padding:3px 9px;border-radius:100px;background:rgba(212,165,116,.08);color:#b9a48a}
+
+.notes{max-width:900px;margin:48px auto 0;padding:32px;background:#14141c;border:1px solid #25252f;border-radius:16px;color:#aaa}
+.notes h4{color:#e8e8ef;margin-bottom:12px;font-size:1.05rem}
+.notes ul{padding-left:18px;font-size:.88rem;line-height:1.8}
+.notes ul li{margin-bottom:4px}
+.notes strong{color:#ddd}
+</style>
+</head>
+<body>
+
+<div class="heading">
+  <h1>作品集模块 · 三种 <em>布局方案</em> 对比</h1>
+  <p>基于 limoo- 模板的项目数据 + 两个网站各自视觉风格，你可以挑选最合适的形态作为设计蓝本</p>
+</div>
+
+<div class="options">
+  <button class="opt-btn active" data-target="a">方案 A · Limoo 移植 (3列网格)</button>
+  <button class="opt-btn" data-target="b">方案 B · lgpsm 未来风 (2列卡片+角标)</button>
+  <button class="opt-btn" data-target="c">方案 C · 横向滚动 (高级感杂志)</button>
+</div>
+
+<!-- ============ SCHEME A ============ -->
+<section class="scheme-wrap visible" data-scheme="a">
+  <div class="scheme-title">
+    <h2>方案 A · Limoo 移植版（深色玻璃风）</h2>
+    <span class="tag">asme-landing 风格</span>
+    <span class="desc">→ 最忠实还原 limoo- 结构，适合 asme-landing 站点直接加入</span>
+  </div>
+  <div class="preview">
+    <div class="preview-header"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="preview-title">asme-landing → Works Section · 1440×900</span></div>
+    <div class="scheme-a">
+      <div class="hero">
+        <span class="section-label">Portfolio · 作品集</span>
+        <h3>Selected <em>Projects</em></h3>
+        <p>66+ 项品牌设计作品，涵盖教育、汽车、商业全案、创意概念等领域。</p>
+      </div>
+
+      <div class="main-cat">
+        <div class="cat-card active"><div class="ico">🎓</div><div class="n">教育品牌全案</div><div class="c">24 项目</div></div>
+        <div class="cat-card"><div class="ico">🚗</div><div class="n">汽车宣传物料</div><div class="c">12 项目</div></div>
+        <div class="cat-card"><div class="ico">💄</div><div class="n">美妆电商视觉</div><div class="c">07 项目</div></div>
+        <div class="cat-card"><div class="ico">✨</div><div class="n">创意概念视觉</div><div class="c">15 项目</div></div>
+      </div>
+
+      <div class="sub-nav">
+        <button class="chip active">全部 · 24</button>
+        <button class="chip">品牌VI升级 · 5</button>
+        <button class="chip">IP形象设计 · 4</button>
+        <button class="chip">新媒体海报 · 6</button>
+        <button class="chip">微信长图文 · 4</button>
+        <button class="chip">讲师包装PPT · 2</button>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="cover"><span class="ph">🎓</span></div>
+          <div class="card-body">
+            <div class="c-cat">教育品牌 · VI升级</div>
+            <h4 class="c-title">优漫品牌设计升级全案</h4>
+            <p class="c-desc">全新品牌视觉识别系统，涵盖LOGO、IP吉祥物设计及IP动作延展、品牌色彩体系及应用规范。</p>
+            <div class="tags"><span class="tag">品牌VI</span><span class="tag">IP吉祥物</span><span class="tag">动作延展</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="cover"><span class="ph">🚗</span></div>
+          <div class="card-body">
+            <div class="c-cat">汽车品牌 · 宣传海报</div>
+            <h4 class="c-title">浦诺菲尊膜品牌海报系列</h4>
+            <p class="c-desc">品牌传播海报，实力/守护/颜值三大核心主题，建立高端品牌认知。</p>
+            <div class="tags"><span class="tag">品牌海报</span><span class="tag">汽车膜</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="cover"><span class="ph">💄</span></div>
+          <div class="card-body">
+            <div class="c-cat">美妆护肤 · 电商视觉</div>
+            <h4 class="c-title">自然堂国潮风专题页</h4>
+            <p class="c-desc">国潮风牌坊+优惠券+套装推荐组合页，配合年中大促节奏打造营销视觉。</p>
+            <div class="tags"><span class="tag">国潮风</span><span class="tag">促销页</span><span class="tag">BANNER</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="cover"><span class="ph">✨</span></div>
+          <div class="card-body">
+            <div class="c-cat">创意概念 · 3D拟物</div>
+            <h4 class="c-title">嗨翻黄金周3D拟物化海报</h4>
+            <p class="c-desc">3D拟物化风格创意探索，结合品牌营销主题打造吸睛节日视觉。</p>
+            <div class="tags"><span class="tag">3D设计</span><span class="tag">拟物化</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="cover"><span class="ph">🎓</span></div>
+          <div class="card-body">
+            <div class="c-cat">教育品牌 · IP形象</div>
+            <h4 class="c-title">U仔IP形象动作延展</h4>
+            <p class="c-desc">品牌IP吉祥物U仔形象设计，包含16种表情+8种动作延展应用。</p>
+            <div class="tags"><span class="tag">IP形象</span><span class="tag">表情延展</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="cover"><span class="ph">🚗</span></div>
+          <div class="card-body">
+            <div class="c-cat">汽配 · 宣传物料</div>
+            <h4 class="c-title">元帅火花塞数据可视化海报</h4>
+            <p class="c-desc">33年历史、39项专利核心数据可视化海报，强化品牌科技感。</p>
+            <div class="tags"><span class="tag">数据可视化</span><span class="tag">火花塞</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCHEME B ============ -->
+<section class="scheme-wrap" data-scheme="b">
+  <div class="scheme-title">
+    <h2>方案 B · 未来风（米白角标+阴影）</h2>
+    <span class="tag">lgpsm-fashion 风格</span>
+    <span class="desc">→ 与 lgpsm-fashion 现有的角标/bracket、边框保持一致，无缝融入</span>
+  </div>
+  <div class="preview">
+    <div class="preview-header"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="preview-title">lgpsm-fashion → Projects Section · 1440×900</span></div>
+    <div class="scheme-b">
+      <div class="hero">
+        <span class="bracket tl"></span><span class="bracket br"></span>
+        <span class="section-label">Projects · 项目领域</span>
+        <h3>BRAND &amp; AIGC<br><span class="acc">WORKS SHOWCASE</span></h3>
+        <p>66+ 个项目经验，覆盖教育品牌 / 汽车 / 3C数码 / 美妆 / 科技智能 / 创意概念 六大领域。</p>
+      </div>
+
+      <div class="cat-list">
+        <div class="cat-box active">
+          <div class="c-name">教育品牌</div>
+          <div class="c-count">24 Projects</div>
+        </div>
+        <div class="cat-box">
+          <div class="c-name">汽车 &amp; 汽配</div>
+          <div class="c-count">12 Projects</div>
+        </div>
+        <div class="cat-box">
+          <div class="c-name">商业 &amp; 电商</div>
+          <div class="c-count">12 Projects</div>
+        </div>
+        <div class="cat-box">
+          <div class="c-name">科技智能</div>
+          <div class="c-count">03 Projects</div>
+        </div>
+        <div class="cat-box">
+          <div class="c-name">3C 数码</div>
+          <div class="c-count">05 Projects</div>
+        </div>
+        <div class="cat-box">
+          <div class="c-name">创意概念</div>
+          <div class="c-count">15 Projects</div>
+        </div>
+      </div>
+
+      <div class="proj-grid">
+        <div class="proj-card">
+          <div class="p-cover"><span class="ph">🎓</span></div>
+          <div class="p-body">
+            <div class="p-meta">
+              <span class="p-cat">教育品牌 / VI</span>
+              <span class="p-num">001</span>
+            </div>
+            <h4 class="p-title">优漫品牌设计升级全案</h4>
+            <p class="p-desc">全新品牌视觉识别系统，涵盖LOGO、IP吉祥物设计及IP动作延展、品牌色彩体系及应用规范。</p>
+            <div class="p-tags"><span class="p-tag">VI</span><span class="p-tag">IP</span></div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="p-cover"><span class="ph">🚗</span></div>
+          <div class="p-body">
+            <div class="p-meta">
+              <span class="p-cat">汽车 / 海报</span>
+              <span class="p-num">002</span>
+            </div>
+            <h4 class="p-title">浦诺菲尊膜品牌海报系列</h4>
+            <p class="p-desc">品牌传播海报，实力/守护/颜值三大核心主题，建立高端品牌认知。</p>
+            <div class="p-tags"><span class="p-tag">海报</span><span class="p-tag">汽车膜</span></div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="p-cover"><span class="ph">💄</span></div>
+          <div class="p-body">
+            <div class="p-meta">
+              <span class="p-cat">美妆 / 电商</span>
+              <span class="p-num">003</span>
+            </div>
+            <h4 class="p-title">自然堂国潮风专题页</h4>
+            <p class="p-desc">国潮风牌坊+优惠券+套装推荐组合页，配合年中大促节奏打造营销视觉。</p>
+            <div class="p-tags"><span class="p-tag">专题页</span><span class="p-tag">国潮</span></div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="p-cover"><span class="ph">✨</span></div>
+          <div class="p-body">
+            <div class="p-meta">
+              <span class="p-cat">创意 / AIGC</span>
+              <span class="p-num">004</span>
+            </div>
+            <h4 class="p-title">AI概念人物与场景系列</h4>
+            <p class="p-desc">使用 AIGC 工具生成品牌概念素材，拓展创意边界与设计探索。</p>
+            <div class="p-tags"><span class="p-tag">AIGC</span><span class="p-tag">概念</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCHEME C ============ -->
+<section class="scheme-wrap" data-scheme="c">
+  <div class="scheme-title">
+    <h2>方案 C · 横向滚动（杂志级高级感）</h2>
+    <span class="tag">asme-landing 强化版</span>
+    <span class="desc">→ 最有辨识度，打破网格对称，适合放在 landing 首页作为焦点 section</span>
+  </div>
+  <div class="preview">
+    <div class="preview-header"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="preview-title">asme-landing → Works Section (Hori Scroll) · 1440×900</span></div>
+    <div class="scheme-c">
+      <span class="section-label">Works / 精选项目</span>
+      <div class="hero">
+        <h3>Brands I've <em>shaped</em><br>with design.</h3>
+        <div class="side">
+          横向滚动的精选项目卡，在品牌故事流程中穿插更有节奏感。下方分类 tab 切换即可过滤不同领域，每个卡片 3:4 比例，强调单项目的封面叙事。
+        </div>
+      </div>
+
+      <div class="cat-strip">
+        <div class="cat-tab active">🎓 教育品牌</div>
+        <div class="cat-tab">🚗 汽车 / 汽配</div>
+        <div class="cat-tab">💄 美妆 / 电商</div>
+        <div class="cat-tab">📱 3C 数码</div>
+        <div class="cat-tab">🤖 科技智能</div>
+        <div class="cat-tab">✨ 创意概念</div>
+      </div>
+
+      <div class="scroll-wrap">
+        <div class="hori-grid">
+          <div class="big-card">
+            <div class="bc-cover">
+              <span class="badge">教育 · VI升级</span>
+              <span class="ph">🎓</span>
+            </div>
+            <div class="bc-body">
+              <h4 class="bc-title">优漫品牌设计升级全案</h4>
+              <p class="bc-desc">LOGO/IP吉祥物/色彩体系/应用规范，完整的品牌识别视觉升级。</p>
+              <div class="bc-tags"><span class="bc-tag">品牌VI</span><span class="bc-tag">IP吉祥物</span></div>
+            </div>
+          </div>
+          <div class="big-card">
+            <div class="bc-cover">
+              <span class="badge">汽车 · 海报</span>
+              <span class="ph">🚗</span>
+            </div>
+            <div class="bc-body">
+              <h4 class="bc-title">浦诺菲尊膜品牌海报系列</h4>
+              <p class="bc-desc">三大核心主题系列品牌传播海报，塑造高端品牌形象。</p>
+              <div class="bc-tags"><span class="bc-tag">海报</span><span class="bc-tag">汽车膜</span></div>
+            </div>
+          </div>
+          <div class="big-card">
+            <div class="bc-cover">
+              <span class="badge">美妆 · 电商页</span>
+              <span class="ph">💄</span>
+            </div>
+            <div class="bc-body">
+              <h4 class="bc-title">自然堂国潮风促销专题页</h4>
+              <p class="bc-desc">国潮牌坊结构+BANNER+优惠券+产品套装组合营销页。</p>
+              <div class="bc-tags"><span class="bc-tag">专题页</span><span class="bc-tag">国潮风</span></div>
+            </div>
+          </div>
+          <div class="big-card">
+            <div class="bc-cover">
+              <span class="badge">创意 · AIGC</span>
+              <span class="ph">✨</span>
+            </div>
+            <div class="bc-body">
+              <h4 class="bc-title">AI 概念人物 &amp; 场景系列</h4>
+              <p class="bc-desc">AIGC 驱动品牌概念设计，拓展创意素材的想象边界。</p>
+              <div class="bc-tags"><span class="bc-tag">AIGC</span><span class="bc-tag">概念设计</span></div>
+            </div>
+          </div>
+          <div class="big-card">
+            <div class="bc-cover">
+              <span class="badge">汽配 · 物料</span>
+              <span class="ph">🔧</span>
+            </div>
+            <div class="bc-body">
+              <h4 class="bc-title">元帅火花塞数据可视化海报</h4>
+              <p class="bc-desc">33年历史/39项专利核心数据可视化，凸显品牌科技力。</p>
+              <div class="bc-tags"><span class="bc-tag">数据可视化</span></div>
+            </div>
+          </div>
+          <div class="big-card">
+            <div class="bc-cover">
+              <span class="badge">创意 · 3D</span>
+              <span class="ph">🎨</span>
+            </div>
+            <div class="bc-body">
+              <h4 class="bc-title">3D拟物化创意海报集合</h4>
+              <p class="bc-desc">露营/野路子/黄金周等节日主题的 3D 拟物化视觉探索。</p>
+              <div class="bc-tags"><span class="bc-tag">3D</span><span class="bc-tag">拟物化</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="notes">
+  <h4>💡 需要先明确的问题（下一步会逐个问）：</h4>
+  <ul>
+    <li><strong>模块挂载位置</strong>：两个网站都做？asme 单独 / lgpsm 单独 / 各自都做？</li>
+    <li><strong>内容详略</strong>：需要 66+ 项目完整展示？还是精选 12-18 个代表作？</li>
+    <li><strong>详情页</strong>：是否需要像 limoo 一样做"项目详情"模态/抽屉/新页？</li>
+    <li><strong>图片来源</strong>：封面图先用 placeholder/生成图占位？还是你已有素材？</li>
+    <li><strong>品牌色系</strong>：是否沿用各站点现有色系（asme 黑+金 / lgpsm 米白+棕金）？</li>
+  </ul>
+</div>
+
+<script>
+document.querySelectorAll('.opt-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.opt-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.scheme-wrap').forEach(s=>s.classList.remove('visible'));
+    btn.classList.add('active');
+    document.querySelector('[data-scheme="'+btn.dataset.target+'"]').classList.add('visible');
+    window.scrollTo({top:document.querySelector('.options').offsetTop-40,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
