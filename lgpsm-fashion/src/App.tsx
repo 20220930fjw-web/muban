@@ -29,6 +29,7 @@ type DrawerType = 'shop' | 'collections' | 'journal' | 'cart' | 'project' | null
 function App() {
   const [activeDrawer, setActiveDrawer] = useState<DrawerType>(null);
   const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [projectFullscreen, setProjectFullscreen] = useState(false);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [toast, setToast] = useState({ show: false, message: '' });
   const shopNowRef = useRef<HTMLButtonElement>(null);
@@ -39,6 +40,7 @@ function App() {
 
   const closeDrawer = useCallback(() => {
     setActiveDrawer(null);
+    setProjectFullscreen(false);
   }, []);
 
   const showToast = useCallback((message: string) => {
@@ -73,7 +75,12 @@ function App() {
 
   const handleProjectClick = useCallback((project: Project) => {
     setActiveProject(project);
+    setProjectFullscreen(false);
     setActiveDrawer('project');
+  }, []);
+
+  const toggleProjectFullscreen = useCallback(() => {
+    setProjectFullscreen((v) => !v);
   }, []);
 
   const handleLogoClick = useCallback(() => {
@@ -164,6 +171,9 @@ function App() {
         onClose={closeDrawer}
         title={activeProject?.title || '项目详情'}
         subtitle={activeProject ? `${getCategoryById(activeProject.categoryId)?.name} · ${activeProject.year}` : 'Project Detail'}
+        fullscreen={projectFullscreen}
+        onToggleFullscreen={toggleProjectFullscreen}
+        showFullscreenToggle
       >
         <ProjectDrawerContent project={activeProject} />
       </Drawer>

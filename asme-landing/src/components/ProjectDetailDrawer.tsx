@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Calendar, User, Clock, Layers, CheckCircle2 } from 'lucide-react';
+import { X, Maximize2, Minimize2, Calendar, User, Clock, Layers, CheckCircle2 } from 'lucide-react';
 import { getCategoryById, type Project } from '../data/projects-data';
 
 interface ProjectDetailDrawerProps {
@@ -11,9 +11,11 @@ interface ProjectDetailDrawerProps {
 
 function ProjectDetailDrawer({ project, isOpen, onClose }: ProjectDetailDrawerProps) {
   const [currentImage, setCurrentImage] = useState(0);
+  const [fullscreen, setFullscreen] = useState(false);
 
   useEffect(() => {
     setCurrentImage(0);
+    setFullscreen(false);
   }, [project]);
 
   useEffect(() => {
@@ -66,16 +68,27 @@ function ProjectDetailDrawer({ project, isOpen, onClose }: ProjectDetailDrawerPr
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ duration: 0.4, ease: [0.32, 0.72, 0, 1] }}
-            className="fixed top-0 right-0 h-full w-full sm:max-w-[520px] bg-[#0f0f17] border-l border-white/10 z-50 flex flex-col overflow-hidden"
+            className={`fixed top-0 right-0 h-full bg-[#0f0f17] border-l border-white/10 z-50 flex flex-col overflow-hidden transition-[max-width] duration-300 ${
+              fullscreen ? 'w-full max-w-full' : 'w-full sm:max-w-[520px]'
+            }`}
           >
-            {/* Close button */}
-            <button
-              onClick={onClose}
-              aria-label="Close"
-              className="absolute top-4 right-4 z-10 w-11 h-11 rounded-full liquid-glass text-white flex items-center justify-center hover:scale-110 transition-transform min-h-[44px] min-w-[44px]"
-            >
-              <X size={20} />
-            </button>
+            {/* Top-right buttons */}
+            <div className="absolute top-4 right-4 z-10 flex items-center gap-2">
+              <button
+                onClick={() => setFullscreen((v) => !v)}
+                aria-label={fullscreen ? '退出全屏' : '全屏查看'}
+                className="w-11 h-11 rounded-full liquid-glass text-white flex items-center justify-center hover:scale-110 transition-transform min-h-[44px] min-w-[44px]"
+              >
+                {fullscreen ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
+              </button>
+              <button
+                onClick={onClose}
+                aria-label="Close"
+                className="w-11 h-11 rounded-full liquid-glass text-white flex items-center justify-center hover:scale-110 transition-transform min-h-[44px] min-w-[44px]"
+              >
+                <X size={20} />
+              </button>
+            </div>
 
             <div className="flex-1 overflow-y-auto overflow-x-hidden">
               {/* Gallery */}
