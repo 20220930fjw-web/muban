@@ -97,8 +97,8 @@ function Hero() {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <button className="text-white text-sm font-medium">广州</button>
-            <button className="liquid-glass rounded-full px-6 py-2 text-white text-sm font-medium">
+            <button className="text-white text-sm font-medium px-2 min-h-[44px] flex items-center">广州</button>
+            <button className="liquid-glass rounded-full px-6 py-2.5 text-white text-sm font-medium min-h-[44px] flex items-center">
               联系我
             </button>
           </div>
@@ -107,7 +107,7 @@ function Hero() {
 
       {/* Hero content */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-12 text-center">
-        <h1 className="text-7xl md:text-8xl lg:text-9xl text-white tracking-tight whitespace-nowrap font-instrument glow-soft" style={{ transform: 'translateZ(0)' }}>
+        <h1 className="text-6xl md:text-8xl lg:text-9xl text-white tracking-tight whitespace-normal md:whitespace-nowrap font-instrument glow-soft" style={{ transform: 'translateZ(0)' }}>
           Design <em className="italic text-brand-gradient">connects</em>.
         </h1>
 
