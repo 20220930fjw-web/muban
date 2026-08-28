@@ -18,9 +18,9 @@ function PhilosophySection() {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl lg:text-8xl text-white tracking-tight mb-16 md:mb-24"
+          className="text-5xl md:text-7xl lg:text-8xl text-white tracking-tight mb-16 md:mb-24 glow-soft"
         >
-          设计 <em className="font-instrument italic text-white/40">理念</em>
+          设计 <em className="font-instrument italic text-brand-gradient">理念</em>
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
@@ -52,7 +52,7 @@ function PhilosophySection() {
           >
             {/* Block 1 */}
             <div>
-              <p className="text-white/40 text-xs tracking-widest uppercase mb-4">
+              <p className="text-xs tracking-widest uppercase mb-4" style={{ color: '#d4a574' }}>
                 策略先行 · Strategy First
               </p>
               <p className="text-white/70 text-base md:text-lg leading-relaxed">
@@ -64,7 +64,7 @@ function PhilosophySection() {
 
             {/* Block 2 */}
             <div>
-              <p className="text-white/40 text-xs tracking-widest uppercase mb-4">
+              <p className="text-xs tracking-widest uppercase mb-4" style={{ color: '#d4a574' }}>
                 细节至上 · Detail Driven
               </p>
               <p className="text-white/70 text-base md:text-lg leading-relaxed">

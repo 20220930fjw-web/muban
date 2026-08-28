@@ -82,7 +82,11 @@ function App() {
   const cartCount = cartItems.length;
 
   return (
-    <div className="min-h-screen bg-white text-black font-jakarta flex flex-col justify-between relative overflow-hidden antialiased">
+    <div className="min-h-screen bg-[#fafaf9] text-black font-jakarta flex flex-col justify-between relative overflow-hidden antialiased">
+      {/* Gradient mesh background */}
+      <div className="gradient-mesh" />
+      {/* Grain texture overlay */}
+      <div className="grain-overlay" />
       {/* Desktop interactive background */}
       <ImageRevealBackground />
 

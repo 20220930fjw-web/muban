@@ -40,7 +40,7 @@ function ServicesSection() {
           <h2 className="text-3xl md:text-5xl text-white tracking-tight">
             我能做什么
           </h2>
-          <p className="text-white/40 text-sm hidden md:block">My services</p>
+          <p className="text-sm hidden md:block" style={{ color: '#d4a574' }}>My services</p>
         </motion.div>
 
         {/* Two-card grid */}
@@ -68,7 +68,7 @@ function ServicesSection() {
             </div>
             <div className="p-6 md:p-8">
               <div className="flex items-start justify-between mb-3">
-                <span className="uppercase tracking-widest text-white/40 text-xs">
+                <span className="uppercase tracking-widest text-xs" style={{ color: '#d4a574' }}>
                   Brand
                 </span>
                 <div className="liquid-glass rounded-full p-2">
@@ -107,7 +107,7 @@ function ServicesSection() {
             </div>
             <div className="p-6 md:p-8">
               <div className="flex items-start justify-between mb-3">
-                <span className="uppercase tracking-widest text-white/40 text-xs">
+                <span className="uppercase tracking-widest text-xs" style={{ color: '#d4a574' }}>
                   AIGC
                 </span>
                 <div className="liquid-glass rounded-full p-2">

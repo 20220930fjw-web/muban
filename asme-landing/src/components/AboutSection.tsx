@@ -29,10 +29,17 @@ function AboutSection() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] tracking-tight"
         >
-          品牌设计师 / <em className="font-instrument italic text-white/60">设计经理</em>
+          品牌设计师 / <em className="font-instrument italic text-brand-gradient">设计经理</em>
           <br className="hidden md:block" />
           <em className="font-instrument italic text-white/60">4-5 年经验，服务 50+ 客户，完成 66+ 项目。</em>
         </motion.h2>
+
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={isInView ? { scaleX: 1 } : {}}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="divider-brand mt-10 origin-left"
+        />
       </div>
     </section>
   );

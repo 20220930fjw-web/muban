@@ -24,7 +24,7 @@ export default function Header({ cartCount, onLogoClick, onNavClick }: HeaderPro
       >
         HUGO
         <span
-          className="font-orbitron ml-0.5"
+          className="font-orbitron ml-0.5 text-accent"
           style={{ fontSize: 'var(--logo-deg)', marginTop: '-0.125rem' }}
         >
           ˚

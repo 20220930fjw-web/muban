@@ -58,8 +58,8 @@ export default function CartDrawerContent({
 
       <button
         onClick={onCheckout}
-        className="w-full bg-black text-white py-3 rounded-md hover:opacity-90 transition-opacity flex items-center justify-center gap-2 mt-auto cursor-pointer font-jakarta uppercase tracking-[0.15em]"
-        style={{ fontSize: 'var(--body)' }}
+        className="w-full text-white py-3 rounded-md hover:brightness-110 transition-all flex items-center justify-center gap-2 mt-auto cursor-pointer font-jakarta uppercase tracking-[0.15em] shadow-lg"
+        style={{ fontSize: 'var(--body)', background: 'linear-gradient(135deg, var(--accent-light), var(--accent))' }}
       >
         提交合作意向
         <ChevronRight size={16} strokeWidth={1.5} />

@@ -35,7 +35,7 @@ export default function Hero({ shopNowRef, onShopNow }: HeroProps) {
             <br />
             & AIGC
             <br />
-            <span className="inline-flex items-center gap-2">
+            <span className="inline-flex items-center gap-2 text-accent-gradient">
               DESIGN
               <CheckeredIcon width="var(--checker-w)" height="var(--checker-h)" />
             </span>
@@ -51,11 +51,12 @@ export default function Hero({ shopNowRef, onShopNow }: HeroProps) {
             <button
               ref={shopNowRef}
               onClick={onShopNow}
-              className="group inline-flex items-center gap-2 border border-gray-400 rounded-md hover:bg-black hover:text-white hover:border-black transition-all duration-300 cursor-pointer"
+              className="group inline-flex items-center gap-2 border-2 rounded-md hover:bg-black hover:text-white hover:border-black transition-all duration-300 cursor-pointer shadow-sm"
               style={{
                 paddingInline: 'var(--btn-px)',
                 paddingBlock: 'var(--btn-py)',
                 fontSize: 'var(--body)',
+                borderColor: 'var(--accent)',
               }}
             >
               <span className="font-jakarta uppercase tracking-[0.18em]">查看技能</span>
@@ -88,7 +89,7 @@ export default function Hero({ shopNowRef, onShopNow }: HeroProps) {
                 className="font-jakarta font-semibold uppercase tracking-[0.18em] mt-4"
                 style={{ fontSize: 'var(--body)', lineHeight: '1.8' }}
               >
-                <div>BEYOND DESIGN.</div>
+                <div className="text-accent">BEYOND DESIGN.</div>
               <div>BUILT FOR BRANDS.</div>
               </div>
             </div>

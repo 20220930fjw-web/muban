@@ -38,7 +38,7 @@ function FeaturedVideoSection() {
           <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
             <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-end">
               <div className="liquid-glass rounded-2xl p-6 md:p-8 max-w-md">
-                <p className="text-white/50 text-xs tracking-widest uppercase mb-3">
+                <p className="text-xs tracking-widest uppercase mb-3" style={{ color: '#d4a574' }}>
                   我的故事 · My Story
                 </p>
                 <p className="text-white text-sm md:text-base leading-relaxed">
