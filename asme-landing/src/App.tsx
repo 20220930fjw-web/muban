@@ -6,7 +6,8 @@ import ServicesSection from './components/ServicesSection';
 
 function App() {
   return (
-    <div className="bg-black min-h-screen text-white">
+    <div className="bg-black min-h-screen text-white relative">
+      <div className="grain-overlay" />
       <Hero />
       <AboutSection />
       <FeaturedVideoSection />

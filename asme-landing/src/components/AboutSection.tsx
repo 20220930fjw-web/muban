@@ -17,7 +17,8 @@ function AboutSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-white/40 text-sm tracking-widest uppercase mb-6"
+          className="text-brand text-sm tracking-widest uppercase mb-6"
+          style={{ color: '#d4a574' }}
         >
           About Me · 关于我
         </motion.p>

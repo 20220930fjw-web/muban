@@ -107,8 +107,8 @@ function Hero() {
 
       {/* Hero content */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-12 text-center">
-        <h1 className="text-7xl md:text-8xl lg:text-9xl text-white tracking-tight whitespace-nowrap font-instrument" style={{ transform: 'translateZ(0)' }}>
-          Design <em className="italic">connects</em>.
+        <h1 className="text-7xl md:text-8xl lg:text-9xl text-white tracking-tight whitespace-nowrap font-instrument glow-soft" style={{ transform: 'translateZ(0)' }}>
+          Design <em className="italic text-brand-gradient">connects</em>.
         </h1>
 
         {/* Email input */}
@@ -119,7 +119,7 @@ function Hero() {
               placeholder="输入你的邮箱，开始合作"
               className="flex-1 bg-transparent text-white placeholder:text-white/40 outline-none text-sm"
             />
-            <button className="bg-white rounded-full p-3 text-black hover:bg-white/90 transition-colors flex-shrink-0">
+            <button className="bg-brand rounded-full p-3 text-black hover:brightness-110 transition-all flex-shrink-0 shadow-lg" style={{ background: 'linear-gradient(135deg, #e8b88a, #d4a574)' }}>
               <ArrowRight size={20} />
             </button>
           </div>
@@ -131,7 +131,7 @@ function Hero() {
         </p>
 
         {/* Manifesto button */}
-        <button className="liquid-glass rounded-full px-8 py-3 text-white text-sm font-medium hover:bg-white/5 transition-colors mt-6">
+        <button className="brand-glass rounded-full px-8 py-3 text-white text-sm font-medium hover:bg-white/5 transition-colors mt-6">
           我的设计理念
         </button>
       </div>
