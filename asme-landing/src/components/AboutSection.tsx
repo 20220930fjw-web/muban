@@ -19,7 +19,7 @@ function AboutSection() {
           transition={{ duration: 0.6 }}
           className="text-white/40 text-sm tracking-widest uppercase mb-6"
         >
-          About Us
+          About Me · 关于我
         </motion.p>
 
         <motion.h2
@@ -28,9 +28,9 @@ function AboutSection() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] tracking-tight"
         >
-          Pioneering <em className="font-instrument italic text-white/60">ideas</em> for
+          品牌设计师 / <em className="font-instrument italic text-white/60">设计经理</em>
           <br className="hidden md:block" />
-          <em className="font-instrument italic text-white/60">minds that create, build, and inspire.</em>
+          <em className="font-instrument italic text-white/60">4-5 年经验，服务 50+ 客户，完成 66+ 项目。</em>
         </motion.h2>
       </div>
     </section>

@@ -83,13 +83,13 @@ function Hero() {
         <div className="liquid-glass rounded-full max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center">
             <Globe size={24} className="text-white" />
-            <span className="text-white font-semibold text-lg ml-2">Asme</span>
+            <span className="text-white font-semibold text-lg ml-2">HUGO</span>
             <div className="hidden md:flex items-center gap-8 ml-8">
               <a href="#" className="text-white/80 hover:text-white text-sm font-medium transition-colors">
-                Features
+                Works
               </a>
               <a href="#" className="text-white/80 hover:text-white text-sm font-medium transition-colors">
-                Pricing
+                Services
               </a>
               <a href="#" className="text-white/80 hover:text-white text-sm font-medium transition-colors">
                 About
@@ -97,9 +97,9 @@ function Hero() {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <button className="text-white text-sm font-medium">Sign Up</button>
+            <button className="text-white text-sm font-medium">广州</button>
             <button className="liquid-glass rounded-full px-6 py-2 text-white text-sm font-medium">
-              Login
+              联系我
             </button>
           </div>
         </div>
@@ -108,7 +108,7 @@ function Hero() {
       {/* Hero content */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-12 text-center">
         <h1 className="text-7xl md:text-8xl lg:text-9xl text-white tracking-tight whitespace-nowrap font-instrument" style={{ transform: 'translateZ(0)' }}>
-          Know it then <em className="italic">all</em>.
+          Design <em className="italic">connects</em>.
         </h1>
 
         {/* Email input */}
@@ -116,7 +116,7 @@ function Hero() {
           <div className="liquid-glass rounded-full pl-6 pr-2 py-2 flex items-center gap-3">
             <input
               type="email"
-              placeholder="Enter your email"
+              placeholder="输入你的邮箱，开始合作"
               className="flex-1 bg-transparent text-white placeholder:text-white/40 outline-none text-sm"
             />
             <button className="bg-white rounded-full p-3 text-black hover:bg-white/90 transition-colors flex-shrink-0">
@@ -127,12 +127,12 @@ function Hero() {
 
         {/* Subtitle */}
         <p className="text-white text-sm leading-relaxed px-4 mt-6 max-w-lg">
-          Stay updated with the latest news and insights. Subscribe to our newsletter today and never miss out on exciting updates.
+          冯江威 / HUGO — 品牌设计师 & 设计经理，专注 Brand & AIGC。用设计连接品牌与用户，以创意驱动商业价值。
         </p>
 
         {/* Manifesto button */}
         <button className="liquid-glass rounded-full px-8 py-3 text-white text-sm font-medium hover:bg-white/5 transition-colors mt-6">
-          Our Manifesto
+          我的设计理念
         </button>
       </div>
 

@@ -39,10 +39,10 @@ function FeaturedVideoSection() {
             <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-end">
               <div className="liquid-glass rounded-2xl p-6 md:p-8 max-w-md">
                 <p className="text-white/50 text-xs tracking-widest uppercase mb-3">
-                  Our Approach
+                  我的故事 · My Story
                 </p>
                 <p className="text-white text-sm md:text-base leading-relaxed">
-                  We believe in the power of curiosity-driven exploration. Every project starts with a question, and every answer opens a new door to innovation.
+                  我是冯江威，设计圈内以"HUGO"为人所知。先后任职于广州皓程、广州云创与上海商睿，从电商设计实战到教育品牌 VI、汽车视觉，再到品牌视觉体系统筹与团队管理，始终相信好的设计是品牌战略的视觉化表达。
                 </p>
               </div>
 
@@ -51,7 +51,7 @@ function FeaturedVideoSection() {
                 whileTap={{ scale: 0.95 }}
                 className="liquid-glass rounded-full px-8 py-3 text-white text-sm font-medium whitespace-nowrap"
               >
-                Explore more
+                了解更多
               </motion.button>
             </div>
           </div>
