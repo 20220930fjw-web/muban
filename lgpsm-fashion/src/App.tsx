@@ -3,13 +3,17 @@ import ImageRevealBackground from './components/ImageRevealBackground';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import MobileImage from './components/MobileImage';
+import ProjectsSection from './components/ProjectsSection';
 import Drawer from './components/Drawer';
 import ShopDrawerContent from './components/ShopDrawerContent';
 import CollectionsDrawerContent from './components/CollectionsDrawerContent';
 import JournalDrawerContent from './components/JournalDrawerContent';
 import CartDrawerContent from './components/CartDrawerContent';
+import ProjectDrawerContent from './components/ProjectDrawerContent';
 import Toast from './components/Toast';
 import type { CartItem, ShopItem } from './types';
+import type { Project } from './data/projects-data';
+import { getCategoryById } from './data/projects-data';
 
 const SHOP_ITEMS: ShopItem[] = [
   { id: 'photoshop', title: 'Photoshop', price: '95%', tag: '精通' },
@@ -20,10 +24,11 @@ const SHOP_ITEMS: ShopItem[] = [
   { id: 'after-effects', title: 'After Effects', price: '70%', tag: '掌握' },
 ];
 
-type DrawerType = 'shop' | 'collections' | 'journal' | 'cart' | null;
+type DrawerType = 'shop' | 'collections' | 'journal' | 'cart' | 'project' | null;
 
 function App() {
   const [activeDrawer, setActiveDrawer] = useState<DrawerType>(null);
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [toast, setToast] = useState({ show: false, message: '' });
   const shopNowRef = useRef<HTMLButtonElement>(null);
@@ -66,6 +71,11 @@ function App() {
     openDrawer('shop');
   }, [openDrawer]);
 
+  const handleProjectClick = useCallback((project: Project) => {
+    setActiveProject(project);
+    setActiveDrawer('project');
+  }, []);
+
   const handleLogoClick = useCallback(() => {
     closeDrawer();
   }, [closeDrawer]);
@@ -99,6 +109,9 @@ function App() {
 
       {/* Hero */}
       <Hero shopNowRef={shopNowRef} onShopNow={handleShopNow} />
+
+      {/* Projects Section */}
+      <ProjectsSection onProjectClick={handleProjectClick} />
 
       {/* Mobile image */}
       <MobileImage />
@@ -144,6 +157,15 @@ function App() {
           onRemove={handleRemoveFromCart}
           onCheckout={handleCheckout}
         />
+      </Drawer>
+
+      <Drawer
+        isOpen={activeDrawer === 'project'}
+        onClose={closeDrawer}
+        title={activeProject?.title || '项目详情'}
+        subtitle={activeProject ? `${getCategoryById(activeProject.categoryId)?.name} · ${activeProject.year}` : 'Project Detail'}
+      >
+        <ProjectDrawerContent project={activeProject} />
       </Drawer>
 
       {/* Toast */}
