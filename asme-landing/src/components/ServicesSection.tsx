@@ -38,9 +38,9 @@ function ServicesSection() {
           className="flex items-center justify-between mb-12 md:mb-16"
         >
           <h2 className="text-3xl md:text-5xl text-white tracking-tight">
-            What we do
+            我能做什么
           </h2>
-          <p className="text-white/40 text-sm hidden md:block">Our services</p>
+          <p className="text-sm hidden md:block" style={{ color: '#d4a574' }}>My services</p>
         </motion.div>
 
         {/* Two-card grid */}
@@ -68,18 +68,18 @@ function ServicesSection() {
             </div>
             <div className="p-6 md:p-8">
               <div className="flex items-start justify-between mb-3">
-                <span className="uppercase tracking-widest text-white/40 text-xs">
-                  Strategy
+                <span className="uppercase tracking-widest text-xs" style={{ color: '#d4a574' }}>
+                  Brand
                 </span>
                 <div className="liquid-glass rounded-full p-2">
                   <ArrowUpRight size={18} className="text-white" />
                 </div>
               </div>
               <h3 className="text-white text-xl md:text-2xl mb-3 tracking-tight">
-                Research & Insight
+                品牌设计 & 策划
               </h3>
               <p className="text-white/50 text-sm leading-relaxed">
-                We dig deep into data, culture, and human behavior to surface the insights that drive meaningful, lasting change.
+                统筹品牌全案设计，包括 VI 系统升级、产品视觉呈现、IP 形象设计与营销物料，对齐业务目标，提升品牌视觉统一性与专业度。
               </p>
             </div>
           </motion.div>
@@ -107,18 +107,18 @@ function ServicesSection() {
             </div>
             <div className="p-6 md:p-8">
               <div className="flex items-start justify-between mb-3">
-                <span className="uppercase tracking-widest text-white/40 text-xs">
-                  Craft
+                <span className="uppercase tracking-widest text-xs" style={{ color: '#d4a574' }}>
+                  AIGC
                 </span>
                 <div className="liquid-glass rounded-full p-2">
                   <ArrowUpRight size={18} className="text-white" />
                 </div>
               </div>
               <h3 className="text-white text-xl md:text-2xl mb-3 tracking-tight">
-                Design & Execution
+                AI 商业设计师
               </h3>
               <p className="text-white/50 text-sm leading-relaxed">
-                From concept to launch, we obsess over every detail to deliver experiences that feel effortless and look extraordinary.
+                拥抱 AIGC 前沿技术，将 AI 工具深度融入设计工作流。技术不替代创意，而是拓展创意边界，通过人机协作探索更多设计可能性。
               </p>
             </div>
           </motion.div>

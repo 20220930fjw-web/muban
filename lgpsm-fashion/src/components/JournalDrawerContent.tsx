@@ -1,21 +1,21 @@
 const journalEntries = [
   {
-    id: 'aug-2026',
-    date: 'AUG 2026',
-    title: 'THE ARCHITECTURE OF NEXT-GEN TEXTILES',
-    readTime: '4 MIN READ',
+    id: 'job-shanghai',
+    date: '2025.02 - 至今',
+    title: '品牌设计师 / 设计经理 · 上海商睿智能科技',
+    readTime: '统筹品牌视觉体系',
   },
   {
-    id: 'jul-2026',
-    date: 'JUL 2026',
-    title: 'CIRCULAR DESIGN IN HIGH-END APPAREL',
-    readTime: '6 MIN READ',
+    id: 'job-guangzhou',
+    date: '2023.02 - 2024.11',
+    title: '品牌设计师 / 新媒体运营设计师 · 广州云创软件',
+    readTime: '教育品牌 VI + IP',
   },
   {
-    id: 'jun-2026',
-    date: 'JUN 2026',
-    title: 'MINIMALISM AS A FUNCTIONAL STATEMENT',
-    readTime: '3 MIN READ',
+    id: 'job-haocheng',
+    date: '2022.09 - 2022.12',
+    title: '平面设计师 · 广州皓程生物科技',
+    readTime: '物料 / VI / 包装',
   },
 ];
 

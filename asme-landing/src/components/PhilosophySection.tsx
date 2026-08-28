@@ -18,9 +18,9 @@ function PhilosophySection() {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl lg:text-8xl text-white tracking-tight mb-16 md:mb-24"
+          className="text-5xl md:text-7xl lg:text-8xl text-white tracking-tight mb-16 md:mb-24 glow-soft"
         >
-          Innovation <em className="font-instrument italic text-white/40">x</em> Vision
+          设计 <em className="font-instrument italic text-brand-gradient">理念</em>
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
@@ -52,11 +52,11 @@ function PhilosophySection() {
           >
             {/* Block 1 */}
             <div>
-              <p className="text-white/40 text-xs tracking-widest uppercase mb-4">
-                Choose your space
+              <p className="text-xs tracking-widest uppercase mb-4" style={{ color: '#d4a574' }}>
+                策略先行 · Strategy First
               </p>
               <p className="text-white/70 text-base md:text-lg leading-relaxed">
-                Every meaningful breakthrough begins at the intersection of disciplined strategy and remarkable creative vision. We operate at that crossroads, turning bold thinking into tangible outcomes that move people and reshape industries.
+                设计不是凭空想象的艺术创作，而是基于品牌战略的视觉表达。每一次设计前，我都会深入了解品牌定位、目标受众与市场竞争，确保方案有理有据、精准有效，让设计服务于品牌长期价值。
               </p>
             </div>
 
@@ -64,11 +64,11 @@ function PhilosophySection() {
 
             {/* Block 2 */}
             <div>
-              <p className="text-white/40 text-xs tracking-widest uppercase mb-4">
-                Shape the future
+              <p className="text-xs tracking-widest uppercase mb-4" style={{ color: '#d4a574' }}>
+                细节至上 · Detail Driven
               </p>
               <p className="text-white/70 text-base md:text-lg leading-relaxed">
-                We believe that the best work emerges when curiosity meets conviction. Our process is designed to uncover hidden opportunities and translate them into experiences that resonate long after the first impression.
+                魔鬼藏在细节中。从字间距的微调、色彩饱和度的把控，到设计规范的落地与项目节点的推进，每一个细节都影响最终品质。我追求像素级的精准，重视流程中的细节管理。
               </p>
             </div>
           </motion.div>

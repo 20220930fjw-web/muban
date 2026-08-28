@@ -31,12 +31,12 @@ export default function Hero({ shopNowRef, onShopNow }: HeroProps) {
             className="font-orbitron font-extrabold uppercase tracking-[0.08em] leading-[1.05]"
             style={{ fontSize: 'var(--headline)' }}
           >
-            FUTURE
+            BRAND
             <br />
-            FORWARD
+            & AIGC
             <br />
-            <span className="inline-flex items-center gap-2">
-              FASHION
+            <span className="inline-flex items-center gap-2 text-accent-gradient">
+              DESIGN
               <CheckeredIcon width="var(--checker-w)" height="var(--checker-h)" />
             </span>
           </h1>
@@ -51,14 +51,15 @@ export default function Hero({ shopNowRef, onShopNow }: HeroProps) {
             <button
               ref={shopNowRef}
               onClick={onShopNow}
-              className="group inline-flex items-center gap-2 border border-gray-400 rounded-md hover:bg-black hover:text-white hover:border-black transition-all duration-300 cursor-pointer"
+              className="group inline-flex items-center gap-2 border-2 rounded-md hover:bg-black hover:text-white hover:border-black transition-all duration-300 cursor-pointer shadow-sm"
               style={{
                 paddingInline: 'var(--btn-px)',
                 paddingBlock: 'var(--btn-py)',
                 fontSize: 'var(--body)',
+                borderColor: 'var(--accent)',
               }}
             >
-              <span className="font-jakarta uppercase tracking-[0.18em]">SHOP NOW</span>
+              <span className="font-jakarta uppercase tracking-[0.18em]">查看技能</span>
               <ArrowUpRight
                 strokeWidth={1.5}
                 className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
@@ -88,8 +89,8 @@ export default function Hero({ shopNowRef, onShopNow }: HeroProps) {
                 className="font-jakarta font-semibold uppercase tracking-[0.18em] mt-4"
                 style={{ fontSize: 'var(--body)', lineHeight: '1.8' }}
               >
-                <div>BEYOND TRENDS.</div>
-                <div>BUILT FOR TOMORROW.</div>
+                <div className="text-accent">BEYOND DESIGN.</div>
+              <div>BUILT FOR BRANDS.</div>
               </div>
             </div>
           </div>

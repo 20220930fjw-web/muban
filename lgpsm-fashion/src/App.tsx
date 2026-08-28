@@ -12,10 +12,12 @@ import Toast from './components/Toast';
 import type { CartItem, ShopItem } from './types';
 
 const SHOP_ITEMS: ShopItem[] = [
-  { id: 'cyber-tex-overcoat', title: 'CYBER-TEX OVERCOAT', price: '$850', tag: 'LIMITED EDITION' },
-  { id: 'geo-mesh-hoodie', title: 'GEO-MESH TECH HOODIE', price: '$320', tag: 'NEW DROP' },
-  { id: 'orbital-trousers', title: 'ORBITAL TAPERED TROUSERS', price: '$290', tag: 'IN STOCK' },
-  { id: 'modular-vest', title: 'MODULAR ALL-WEATHER VEST', price: '$410', tag: 'PRE-ORDER' },
+  { id: 'photoshop', title: 'Photoshop', price: '95%', tag: '精通' },
+  { id: 'illustrator', title: 'Illustrator', price: '90%', tag: '精通' },
+  { id: 'figma', title: 'Figma', price: '85%', tag: '熟练' },
+  { id: 'midjourney', title: 'Midjourney', price: '85%', tag: '熟练' },
+  { id: 'stable-diffusion', title: 'Stable Diffusion', price: '80%', tag: '熟练' },
+  { id: 'after-effects', title: 'After Effects', price: '70%', tag: '掌握' },
 ];
 
 type DrawerType = 'shop' | 'collections' | 'journal' | 'cart' | null;
@@ -47,7 +49,7 @@ function App() {
       ...prev,
       { id: `${item.id}-${Date.now()}`, title: item.title, price: item.price },
     ]);
-    showToast(`Added "${item.title}" to your shopping bag.`);
+    showToast(`已收藏技能"${item.title}"。`);
   }, [showToast]);
 
   const handleRemoveFromCart = useCallback((id: string) => {
@@ -55,7 +57,7 @@ function App() {
   }, []);
 
   const handleCheckout = useCallback(() => {
-    showToast('Order submitted successfully!');
+    showToast('已收到你的需求，期待与您合作！');
     setCartItems([]);
     closeDrawer();
   }, [showToast, closeDrawer]);
@@ -73,14 +75,18 @@ function App() {
       className="font-jakarta text-gray-400 uppercase tracking-[0.15em] text-center"
       style={{ fontSize: 'var(--micro)' }}
     >
-      LGPSM © 2026 — FUTURE FORWARD FASHION
+      HUGO © 2026 — BRAND & AIGC DESIGN
     </p>
   );
 
   const cartCount = cartItems.length;
 
   return (
-    <div className="min-h-screen bg-white text-black font-jakarta flex flex-col justify-between relative overflow-hidden antialiased">
+    <div className="min-h-screen bg-[#fafaf9] text-black font-jakarta flex flex-col justify-between relative overflow-hidden antialiased">
+      {/* Gradient mesh background */}
+      <div className="gradient-mesh" />
+      {/* Grain texture overlay */}
+      <div className="grain-overlay" />
       {/* Desktop interactive background */}
       <ImageRevealBackground />
 
@@ -101,8 +107,8 @@ function App() {
       <Drawer
         isOpen={activeDrawer === 'shop'}
         onClose={closeDrawer}
-        title="Catalog"
-        subtitle="Featured Garments"
+        title="技能展示"
+        subtitle="Skills & Tools"
         footer={footer}
       >
         <ShopDrawerContent items={SHOP_ITEMS} onAdd={handleAddToCart} />
@@ -111,8 +117,8 @@ function App() {
       <Drawer
         isOpen={activeDrawer === 'collections'}
         onClose={closeDrawer}
-        title="Archive 2026"
-        subtitle="Season Lineup"
+        title="项目领域"
+        subtitle="Project Fields"
         footer={footer}
       >
         <CollectionsDrawerContent />
@@ -121,8 +127,8 @@ function App() {
       <Drawer
         isOpen={activeDrawer === 'journal'}
         onClose={closeDrawer}
-        title="Editorial"
-        subtitle="Latest Dispatches"
+        title="工作经历"
+        subtitle="Experience"
         footer={footer}
       >
         <JournalDrawerContent />
@@ -131,7 +137,7 @@ function App() {
       <Drawer
         isOpen={activeDrawer === 'cart'}
         onClose={closeDrawer}
-        title="Shopping Bag"
+        title="合作意向"
       >
         <CartDrawerContent
           items={cartItems}

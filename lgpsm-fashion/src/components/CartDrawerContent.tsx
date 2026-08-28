@@ -20,7 +20,7 @@ export default function CartDrawerContent({
           className="font-jakarta text-gray-500"
           style={{ fontSize: 'var(--body)' }}
         >
-          Your shopping bag is empty.
+          暂无合作意向，去收藏感兴趣的技能吧。
         </p>
       </div>
     );
@@ -50,7 +50,7 @@ export default function CartDrawerContent({
               className="text-gray-400 hover:text-black transition-colors uppercase tracking-[0.1em] font-jakarta cursor-pointer"
               style={{ fontSize: 'var(--micro)' }}
             >
-              Remove
+              移除
             </button>
           </div>
         ))}
@@ -58,10 +58,10 @@ export default function CartDrawerContent({
 
       <button
         onClick={onCheckout}
-        className="w-full bg-black text-white py-3 rounded-md hover:opacity-90 transition-opacity flex items-center justify-center gap-2 mt-auto cursor-pointer font-jakarta uppercase tracking-[0.15em]"
-        style={{ fontSize: 'var(--body)' }}
+        className="w-full text-white py-3 rounded-md hover:brightness-110 transition-all flex items-center justify-center gap-2 mt-auto cursor-pointer font-jakarta uppercase tracking-[0.15em] shadow-lg"
+        style={{ fontSize: 'var(--body)', background: 'linear-gradient(135deg, var(--accent-light), var(--accent))' }}
       >
-        CHECKOUT NOW
+        提交合作意向
         <ChevronRight size={16} strokeWidth={1.5} />
       </button>
     </div>

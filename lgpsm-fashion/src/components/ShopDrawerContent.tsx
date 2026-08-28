@@ -33,10 +33,10 @@ export default function ShopDrawerContent({ items, onAdd }: ShopDrawerContentPro
             </span>
             <button
               onClick={() => onAdd(item)}
-              className="border border-black px-3 py-1 rounded-md hover:bg-black hover:text-white transition-colors cursor-pointer font-jakarta uppercase tracking-[0.1em]"
-              style={{ fontSize: 'var(--micro)' }}
+              className="border px-3 py-1 rounded-md hover:bg-black hover:text-white transition-all cursor-pointer font-jakarta uppercase tracking-[0.1em] shadow-sm"
+              style={{ fontSize: 'var(--micro)', borderColor: 'var(--accent)' }}
             >
-              ADD
+              收藏
             </button>
           </div>
         </div>
