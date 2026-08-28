@@ -37,13 +37,13 @@ export default function CollectionsDrawerContent() {
       {collections.map((collection) => (
         <div key={collection.id} className="border-b border-gray-200 pb-5">
           <h3
-            className="font-jakarta font-semibold mb-2"
+            className="font-jakarta font-semibold mb-2 break-words"
             style={{ fontSize: 'var(--body)' }}
           >
             {collection.title}
           </h3>
           <p
-            className="font-jakarta text-gray-500 leading-relaxed"
+            className="font-jakarta text-gray-500 leading-relaxed break-words"
             style={{ fontSize: 'var(--micro)' }}
           >
             {collection.description}

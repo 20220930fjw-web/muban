@@ -30,10 +30,10 @@ export default function CartDrawerContent({
     <div className="flex flex-col h-full">
       <div className="flex-1 flex flex-col gap-4">
         {items.map((item) => (
-          <div key={item.id} className="flex items-center justify-between border-b border-gray-200 pb-4">
-            <div className="flex flex-col gap-1">
+          <div key={item.id} className="flex items-center justify-between border-b border-gray-200 pb-4 gap-3">
+            <div className="flex flex-col gap-1 min-w-0 flex-1">
               <span
-                className="font-jakarta font-semibold"
+                className="font-jakarta font-semibold break-words"
                 style={{ fontSize: 'var(--body)' }}
               >
                 {item.title}
@@ -47,7 +47,7 @@ export default function CartDrawerContent({
             </div>
             <button
               onClick={() => onRemove(item.id)}
-              className="text-gray-400 hover:text-black transition-colors uppercase tracking-[0.1em] font-jakarta cursor-pointer"
+              className="text-gray-400 hover:text-black transition-colors uppercase tracking-[0.1em] font-jakarta cursor-pointer min-h-[44px] flex items-center flex-shrink-0"
               style={{ fontSize: 'var(--micro)' }}
             >
               移除
@@ -58,7 +58,7 @@ export default function CartDrawerContent({
 
       <button
         onClick={onCheckout}
-        className="w-full text-white py-3 rounded-md hover:brightness-110 transition-all flex items-center justify-center gap-2 mt-auto cursor-pointer font-jakarta uppercase tracking-[0.15em] shadow-lg"
+        className="w-full text-white py-3 rounded-md hover:brightness-110 transition-all flex items-center justify-center gap-2 mt-auto cursor-pointer font-jakarta uppercase tracking-[0.15em] shadow-lg min-h-[44px]"
         style={{ fontSize: 'var(--body)', background: 'linear-gradient(135deg, var(--accent-light), var(--accent))' }}
       >
         提交合作意向

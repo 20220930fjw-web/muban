@@ -25,18 +25,18 @@ export default function JournalDrawerContent() {
       {journalEntries.map((entry) => (
         <div key={entry.id} className="border-b border-gray-200 pb-4">
           <div
-            className="flex items-center justify-between mb-2"
+            className="flex items-start justify-between mb-2 gap-3"
             style={{ fontSize: 'var(--micro)' }}
           >
-            <span className="font-jakarta text-gray-500 uppercase tracking-[0.15em]">
+            <span className="font-jakarta text-gray-500 uppercase tracking-[0.15em] break-words min-w-0">
               {entry.date}
             </span>
-            <span className="font-jakarta text-gray-400 uppercase tracking-[0.1em]">
+            <span className="font-jakarta text-gray-400 uppercase tracking-[0.1em] break-words min-w-0 text-right flex-shrink-0">
               {entry.readTime}
             </span>
           </div>
           <h3
-            className="font-jakarta font-semibold"
+            className="font-jakarta font-semibold break-words"
             style={{ fontSize: 'var(--body)' }}
           >
             {entry.title}

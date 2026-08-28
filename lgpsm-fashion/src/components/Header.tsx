@@ -35,21 +35,21 @@ export default function Header({ cartCount, onLogoClick, onNavClick }: HeaderPro
       <nav className="flex items-center" style={{ gap: 'var(--gap-nav)' }}>
         <button
           onClick={() => onNavClick('shop')}
-          className="font-jakarta font-medium uppercase tracking-[0.2em] hover:opacity-50 transition-opacity cursor-pointer"
+          className="font-jakarta font-medium uppercase tracking-[0.2em] hover:opacity-50 transition-opacity cursor-pointer min-h-[44px] flex items-center"
           style={{ fontSize: 'var(--nav)' }}
         >
           技能
         </button>
         <button
           onClick={() => onNavClick('collections')}
-          className="font-jakarta font-medium uppercase tracking-[0.2em] hover:opacity-50 transition-opacity cursor-pointer"
+          className="font-jakarta font-medium uppercase tracking-[0.2em] hover:opacity-50 transition-opacity cursor-pointer min-h-[44px] flex items-center"
           style={{ fontSize: 'var(--nav)' }}
         >
           项目
         </button>
         <button
           onClick={() => onNavClick('journal')}
-          className="font-jakarta font-medium uppercase tracking-[0.2em] hover:opacity-50 transition-opacity cursor-pointer"
+          className="font-jakarta font-medium uppercase tracking-[0.2em] hover:opacity-50 transition-opacity cursor-pointer min-h-[44px] flex items-center"
           style={{ fontSize: 'var(--nav)' }}
         >
           经历
@@ -59,7 +59,7 @@ export default function Header({ cartCount, onLogoClick, onNavClick }: HeaderPro
 
         <button
           onClick={() => onNavClick('cart')}
-          className="relative hover:opacity-50 transition-opacity cursor-pointer"
+          className="relative hover:opacity-50 transition-opacity cursor-pointer min-h-[44px] min-w-[44px] flex items-center justify-center"
           aria-label="合作意向"
         >
           <ShoppingBag

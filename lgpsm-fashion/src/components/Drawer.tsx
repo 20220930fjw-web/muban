@@ -30,7 +30,7 @@ export default function Drawer({
 
       {/* Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full bg-white border-l border-gray-200 z-50 flex flex-col transition-transform duration-300 ease-out ${
+        className={`fixed top-0 right-0 h-full bg-white border-l border-gray-200 z-50 flex flex-col transition-transform duration-300 ease-out overflow-hidden ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{
@@ -40,20 +40,20 @@ export default function Drawer({
         }}
       >
         {/* Header */}
-        <div className="flex items-start justify-between mb-6">
-          <div>
-            <h2 className="font-orbitron font-bold uppercase tracking-[0.08em]" style={{ fontSize: 'var(--body)' }}>
+        <div className="flex items-start justify-between mb-6 gap-3">
+          <div className="min-w-0 flex-1">
+            <h2 className="font-orbitron font-bold uppercase tracking-[0.08em] break-words" style={{ fontSize: 'var(--body)' }}>
               {title}
             </h2>
             {subtitle && (
-              <p className="font-jakarta text-gray-500 mt-1" style={{ fontSize: 'var(--micro)' }}>
+              <p className="font-jakarta text-gray-500 mt-1 break-words" style={{ fontSize: 'var(--micro)' }}>
                 {subtitle}
               </p>
             )}
           </div>
           <button
             onClick={onClose}
-            className="p-1 hover:opacity-50 transition-opacity cursor-pointer"
+            className="p-1 hover:opacity-50 transition-opacity cursor-pointer min-h-[44px] min-w-[44px] flex items-center justify-center flex-shrink-0"
             aria-label="Close"
           >
             <X size={18} strokeWidth={1.5} />
@@ -61,7 +61,7 @@ export default function Drawer({
         </div>
 
         {/* Content */}
-        <div className="flex-1 overflow-y-auto">{children}</div>
+        <div className="flex-1 overflow-y-auto overflow-x-hidden min-w-0">{children}</div>
 
         {/* Footer */}
         {footer && (

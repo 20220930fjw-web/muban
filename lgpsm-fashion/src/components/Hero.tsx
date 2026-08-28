@@ -51,7 +51,7 @@ export default function Hero({ shopNowRef, onShopNow }: HeroProps) {
             <button
               ref={shopNowRef}
               onClick={onShopNow}
-              className="group inline-flex items-center gap-2 border-2 rounded-md hover:bg-black hover:text-white hover:border-black transition-all duration-300 cursor-pointer shadow-sm"
+              className="group inline-flex items-center gap-2 border-2 rounded-md hover:bg-black hover:text-white hover:border-black transition-all duration-300 cursor-pointer shadow-sm min-h-[44px]"
               style={{
                 paddingInline: 'var(--btn-px)',
                 paddingBlock: 'var(--btn-py)',
